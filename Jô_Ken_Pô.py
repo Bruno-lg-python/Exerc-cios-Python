@@ -88,7 +88,7 @@ QUAL OPÇÃO VOCÊ ESCOLHE: '''))
         sleep(1)
         print(f'''O USUÁRIO ESCOLHEU {usuario_escolha}
 E O COMPUTADOR ESCOLHEU {pc_escolha}
-O RESULTADO DA RODADA: {resultado}''')
+O GANHADOR DA RODADA: {resultado}''')
 
         # Atualizando o placar
         if resultado == '\033[32mVOCÊ \033[0m':
