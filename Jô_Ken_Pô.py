@@ -24,13 +24,12 @@ def gerar():
 
 # Função que verifica quem ganhou a rodada
 def verificar(pc, usuario):
-    match (pc, usuario):
-        case _ if pc == usuario:  # Condição de empate
-            return '\033[33mEMPATOU\033[0m'
-        case _ if pc < usuario:  # Condições de vitória do computador
-            return '\033[31mCOMPUTADOR \033[0m'
-        case _:
-            return '\033[32mVOCÊ \033[0m'  # Condição de vitória do jogador
+    if pc == usuario:
+        return '\033[33mEMPATE\033[0m'
+    elif (pc == 1 and usuario == 3) or (pc == 2 and usuario == 1) or (pc == 3 and usuario == 2):
+        return '\033[31mCOMPUTADOR \033[0m'
+    else:
+        return '\033[32mVOCÊ \033[0m'
 
 # Função principal do jogo
 def jogar():
@@ -89,6 +88,7 @@ QUAL OPÇÃO VOCÊ ESCOLHE: '''))
         print(f'''O USUÁRIO ESCOLHEU {usuario_escolha}
 E O COMPUTADOR ESCOLHEU {pc_escolha}
 O RESULTADO DA RODADA: {resultado}''')
+        print(pc, usuario)
 
         # Atualizando o placar
         if resultado == '\033[32mVOCÊ \033[0m':
