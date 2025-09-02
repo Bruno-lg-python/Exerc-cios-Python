@@ -18,7 +18,13 @@ class Animal(Tipos):
     def cores(self):
         print(f'A cor dos pelos de {self.nome} e {self.cor}')
 
+# Função para o cachorro brincar, herdando a classe Animal
+def brincar(Animal):
+    print(f'O cachorro {Animal.nome} esta brincando')
+
+
 espe = Animal('rex', 'vira_lata', 'preto', 'domesticado', 'auau')
 espe.som()
 espe.especies()
 espe.cores()
+brincar(espe)
